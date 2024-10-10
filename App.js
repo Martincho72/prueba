@@ -19,16 +19,16 @@ import { PaperProvider, Text } from 'react-native-paper';
 import Partit from './src/components/Partit';
 
 
-const nom = (textAMostrar) => {
+const nom = (textAMostrar, estil) => {
   return(
-  <Text>{textAMostrar}</Text>
+  <Text style={estil}>{textAMostrar}</Text>
   );
 }
 
 /** A la funció App, dins del return crearem la notra pantalla */
 const App = () => {
 return (
-<PaperProvider>{nom("Juan Martín Barrachina Alfonso")}</PaperProvider>
+<PaperProvider>{nom("Juan Martín Barrachina Alfonso", estils.titol)}</PaperProvider>
 );}
 
 /** En aquesta secció, crearem els estils a aplicar als nostres components */
