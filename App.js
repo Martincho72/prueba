@@ -15,7 +15,7 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-import { PaperProvider, Text } from 'react-native-paper';
+import { PaperProvider, Text, TextInput } from 'react-native-paper';
 import Partit from './src/components/Partit';
 
 
@@ -25,10 +25,19 @@ const nom = (textAMostrar, estil) => {
   );
 }
 
+const dades = () => {
+  return(
+    <TextInput>Martincho</TextInput>
+  );
+}
+
 /** A la funció App, dins del return crearem la notra pantalla */
 const App = () => {
 return (
-<PaperProvider>{nom("Juan Martín Barrachina Alfonso", estils.titol)}</PaperProvider>
+<PaperProvider>
+  {nom("Juan Martín Barrachina Alfonso", estils.titol)}
+  {dades()}
+</PaperProvider>
 );}
 
 /** En aquesta secció, crearem els estils a aplicar als nostres components */
