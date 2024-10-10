@@ -18,6 +18,7 @@ import {
 import { PaperProvider, Text, TextInput } from 'react-native-paper';
 import Partit from './src/components/Partit';
 
+const elements = ["Email", "Nom"];
 
 const nom = (textAMostrar, estil) => {
   return(
@@ -25,9 +26,11 @@ const nom = (textAMostrar, estil) => {
   );
 }
 
-const dades = () => {
+const dades = (arrayDades) => {
   return(
-    <TextInput>Martincho</TextInput>
+  arrayDades.map((element, indexElement) => (
+    <TextInput key={indexElement} label={element}></TextInput>
+  ))
   );
 }
 
@@ -36,24 +39,15 @@ const App = () => {
 return (
 <PaperProvider>
   {nom("Juan Martín Barrachina Alfonso", estils.titol)}
-  {dades()}
+  {dades(elements)}
 </PaperProvider>
 );}
 
 /** En aquesta secció, crearem els estils a aplicar als nostres components */
 const estils = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
   titol: {
     fontSize: 32,
     fontWeight: 'bold',
-  },
-  descripcio: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
   },
 });
 
