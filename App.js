@@ -13,22 +13,23 @@ import {
   ScrollView,
   StatusBar,
   StyleSheet,
-  Text,
   View,
 } from 'react-native';
-import { PaperProvider } from 'react-native-paper';
+import { PaperProvider, Text } from 'react-native-paper';
 import Partit from './src/components/Partit';
 
 
+const nom = () => {
+  return(
+  <Text>Juan Martín Barrachina Alfonso</Text>
+  );
+}
 
 /** A la funció App, dins del return crearem la notra pantalla */
-
 const App = () => {
-  return (
-  <PaperProvider>
-  </PaperProvider>
-  );
-}  
+return (
+<PaperProvider>{nom()}</PaperProvider>
+);}
 
 /** En aquesta secció, crearem els estils a aplicar als nostres components */
 const estils = StyleSheet.create({
