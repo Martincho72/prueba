@@ -20,7 +20,7 @@ import Partit from './src/components/Partit';
 
 const elements = ["Email", "Nom"];
 
-const estil = 'florida';
+const estil = 'upv';
 
 const nom = (textAMostrar, estilo) => {
   return (
@@ -31,7 +31,7 @@ const nom = (textAMostrar, estilo) => {
 const dades = (arrayDades) => {
   return (
     arrayDades.map((element, indexElement) => (
-      <TextInput style={estil} key={indexElement} label={element}></TextInput>
+      <TextInput placeholderTextColor={estil === 'florida' ? 'white': 'orange'} style={estil} key={indexElement} label={element}></TextInput>
     ))
   );
 }
@@ -61,7 +61,6 @@ const estils = StyleSheet.create({
     padding: 4,
     paddingLeft: 12,
     textAlign: 'left',
-    color: 'grey',
   },
   florida: {
     backgroundColor: 'red',
