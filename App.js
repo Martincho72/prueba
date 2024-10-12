@@ -20,9 +20,33 @@ import Partit from './src/components/Partit';
 
 const elements = ["Email", "Nom"];
 
+const moduls2Dam = [
+  { nom: 'DIN', professor: 'Manel', hores: 120 },
+  { nom: 'ADA', professor: 'Roberto', hores: 120 },
+  { nom: 'PMDM', professor: 'Paco', hores: 100 },
+  { nom: 'PSP', professor: 'Roberto', hores: 60 },
+  { nom: 'SGE', professor: 'Belén', hores: 100 },
+  { nom: 'Anglés', professor: 'Caterina', hores: 40 },
+  { nom: 'EIE', professor: 'Ana', hores: 60 },
+  ];
+  
+
 const estil = 'florida';
 
 const isAdmin = true;
+
+const moduls = (arrayDades) => {
+  return(
+    arrayDades.map((element, indexElement) => (
+      <View key={indexElement} style={{backgroundColor:indexElement%2==0?"#F48FB1":"#F8BBD0"}}>
+    <Text>{indexElement+1}</Text>
+    <Text>{element.nom}</Text>
+    <Text>{element.professor}</Text>
+    <Text>{element.hores}</Text>
+    </View>
+    ))
+  );
+}
 
 const nom = (textAMostrar, estilo) => {
   return (
@@ -55,6 +79,9 @@ const App = () => {
         {dades(elements)}
       </View>
       <Button  icon={'format-list-bulleted'} style={estils.boto} display={isAdmin?'flex':'none'} labelStyle={{color: 'white',}} >Informes</Button>
+      <View>
+        {moduls(moduls2Dam)}
+      </View>
     </PaperProvider>
   );
 }
