@@ -15,12 +15,14 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-import { PaperProvider, Text, TextInput } from 'react-native-paper';
+import { PaperProvider, Text, TextInput, Button } from 'react-native-paper';
 import Partit from './src/components/Partit';
 
 const elements = ["Email", "Nom"];
 
 const estil = 'florida';
+
+const isAdmin = true;
 
 const nom = (textAMostrar, estilo) => {
   return (
@@ -52,6 +54,7 @@ const App = () => {
       <View style={colorEstils()}>
         {dades(elements)}
       </View>
+      <Button  icon={'format-list-bulleted'} style={estils.boto} display={isAdmin?'flex':'none'} labelStyle={{color: 'white',}} >Informes</Button>
     </PaperProvider>
   );
 }
@@ -78,6 +81,9 @@ const estils = StyleSheet.create({
     paddingRight: 12,
     textAlign: 'right',
   },
+  boto: {
+    backgroundColor: 'purple',
+  }
 });
 
 export default App;
