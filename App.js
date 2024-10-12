@@ -20,7 +20,7 @@ import Partit from './src/components/Partit';
 
 const elements = ["Email", "Nom"];
 
-const estil = 'upv';
+const estil = 'florida';
 
 const nom = (textAMostrar, estilo) => {
   return (
@@ -31,9 +31,17 @@ const nom = (textAMostrar, estilo) => {
 const dades = (arrayDades) => {
   return (
     arrayDades.map((element, indexElement) => (
-      <TextInput placeholderTextColor={estil === 'florida' ? 'white': 'orange'} style={estil} key={indexElement} label={element}></TextInput>
+      <TextInput placeholderTextColor={colorPlaceHolder()} style={estil} key={indexElement} label={element}></TextInput>
     ))
   );
+}
+
+const colorPlaceHolder = () => {
+return estil === 'florida' ? 'white': 'orange';
+}
+
+const colorEstils = () => {
+  return estil === 'florida' ? estils.florida : estils.upv;
 }
 
 /** A la funció App, dins del return crearem la notra pantalla */
@@ -41,7 +49,7 @@ const App = () => {
   return (
     <PaperProvider>
       {nom("Juan Martín Barrachina Alfonso", estils.titol)}
-      <View style={estil === 'florida' ? estils.florida : estils.upv}>
+      <View style={colorEstils()}>
         {dades(elements)}
       </View>
     </PaperProvider>
