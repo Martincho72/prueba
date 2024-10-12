@@ -20,28 +20,33 @@ import Partit from './src/components/Partit';
 
 const elements = ["Email", "Nom"];
 
-const nom = (textAMostrar, estil) => {
-  return(
-  <Text style={estil}>{textAMostrar}</Text>
+const estil = 'florida';
+
+const nom = (textAMostrar, estilo) => {
+  return (
+    <Text style={estilo}>{textAMostrar}</Text>
   );
 }
 
 const dades = (arrayDades) => {
-  return(
-  arrayDades.map((element, indexElement) => (
-    <TextInput key={indexElement} label={element}></TextInput>
-  ))
+  return (
+    arrayDades.map((element, indexElement) => (
+      <TextInput style={estil} key={indexElement} label={element}></TextInput>
+    ))
   );
 }
 
 /** A la funció App, dins del return crearem la notra pantalla */
 const App = () => {
-return (
-<PaperProvider>
-  {nom("Juan Martín Barrachina Alfonso", estils.titol)}
-  {dades(elements)}
-</PaperProvider>
-);}
+  return (
+    <PaperProvider>
+      {nom("Juan Martín Barrachina Alfonso", estils.titol)}
+      <View style={estil === 'florida' ? estils.florida : estils.upv}>
+        {dades(elements)}
+      </View>
+    </PaperProvider>
+  );
+}
 
 /** En aquesta secció, crearem els estils a aplicar als nostres components */
 const estils = StyleSheet.create({
@@ -49,7 +54,7 @@ const estils = StyleSheet.create({
     fontSize: 32,
     fontWeight: 'bold',
   },
-  upv:{
+  upv: {
     backgroundColor: 'purple',
     fontSize: 10,
     fontWeight: '600',
@@ -57,15 +62,15 @@ const estils = StyleSheet.create({
     paddingLeft: 12,
     textAlign: 'left',
     color: 'grey',
-    },
-    florida: {
+  },
+  florida: {
     backgroundColor: 'red',
     fontSize: 12,
     fontWeight: '600',
     padding: 4,
     paddingRight: 12,
     textAlign: 'right',
-    },
+  },
 });
 
 export default App;
