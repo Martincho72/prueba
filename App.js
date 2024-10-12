@@ -49,6 +49,23 @@ const estils = StyleSheet.create({
     fontSize: 32,
     fontWeight: 'bold',
   },
+  upv:{
+    backgroundColor: 'purple',
+    fontSize: 10,
+    fontWeight: '600',
+    padding: 4,
+    paddingLeft: 12,
+    textAlign: 'left',
+    color: 'grey',
+    },
+    florida: {
+    backgroundColor: 'red',
+    fontSize: 12,
+    fontWeight: '600',
+    padding: 4,
+    paddingRight: 12,
+    textAlign: 'right',
+    },
 });
 
 export default App;
